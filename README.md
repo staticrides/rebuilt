@@ -13,6 +13,19 @@ Requirements: Node.js 18 or newer.
 5. Run `npm start`.
 6. Visit http://localhost:3000.
 
+## Deploy without using a terminal
+
+This repository includes a Render Blueprint file (`render.yaml`). To deploy from a browser:
+
+1. Sign in to Render and connect your GitHub account if prompted.
+2. In Render, choose **New** → **Blueprint**.
+3. Select the `staticrides/rebuilt` repository and confirm the Blueprint deployment.
+4. Wait for the service build/deploy to finish, then open its URL shown in the Render dashboard.
+
+The app starts in demo mode without an API key. To configure live lookups, add `API_KEY` under the service's environment variables in Render and redeploy. Keep API keys in the host's secret environment settings, not in frontend files.
+
+## API
+
 The API health check is at `/health`; user lookup is at `/api/user/<username>`.
 
 ## Configuration
